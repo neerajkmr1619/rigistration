@@ -1,0 +1,40 @@
+<!--
+
+<div class = "container-fluid mb-5">
+  <h1>
+    River enter details
+  </h1>
+  <form #userForm="ngForm">
+
+    {{ userForm.value | json }}
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="tel" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <select class="custom-select" ngModel>
+        <option selected>Type of work</option>
+        <option *ngFor="let type of types">{{ type }}</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit </button>
+  </form>
+</div>-->
+<html>
+  <body>
+    <app-contact></app-contact>
+  </body>
+</html>
