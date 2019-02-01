@@ -1,0 +1,40 @@
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+<div class="container-fluid">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div>
+      <label formArrayName="types" *ngFor="let order of form.controls.types.controls; let i = index">
+        <input type="checkbox" [formControlName]="i">
+        {{types[i].name }}
+       </label>
+      </div>
+
+      <div>
+      <button class="btn btn-primary">submit</button>
+     </div>
+
+  </form>
+</div>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table' *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.dateFormatted }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+    </tr>
+  </tbody>
+</table>
